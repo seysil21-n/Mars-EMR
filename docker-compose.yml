@@ -1,12 +1,12 @@
 version: "3"
 services: 
    #add nginx service before deployment
-  server:
-     container_name: server
-    #  restart: always
-     build: ./server
-     ports:
-       - "4000:4000"
+  # server:
+  #    container_name: server
+  #   #  restart: always
+  #    build: ./server
+  #    ports:
+  #      - "4000:4000"
    
   mongo: 
      container_name: mongoDB
@@ -16,12 +16,12 @@ services:
      volumes: 
        - ./mars-data:/data/db
   
-  nginx:
-     container_name: nginx
-     image: nginx:latest
-     build: ./client
-     ports: 
-      - 80:80
+  # nginx:
+  #    container_name: nginx
+  #    image: nginx:latest
+  #    build: ./client
+  #    ports: 
+  #     - 80:80
 
 volumes:
   mars-data:
