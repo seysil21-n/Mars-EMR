@@ -1,10 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
-import endpoints from './utils/endpoints';
-import axios from 'axios'
-import APIs from './utils/APIREQUESTS';
+import {APIREQUESTS} from './utils/APIREQUESTS';
 
-const APIRequests = new APIs()
 
 export class App extends Component {
   constructor(props){
@@ -16,9 +13,13 @@ export class App extends Component {
   }
 
   test = () => {
-     APIRequests.post('/test', {name: "Fiifi"})
+     APIREQUESTS.post('/test', {name: "Fiifi"})
      .then(response=> 
       {
+        APIREQUESTS.get('/')
+        .then(response1=> {
+          console.log(response1)
+        })
         console.log(response)
       })
   }

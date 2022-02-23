@@ -1,4 +1,5 @@
 import axios from "axios"
+import App from "../App"
 
 class APIs {
     constructor(){
@@ -38,6 +39,7 @@ class APIs {
     }
 }
 
-
+const APIREQUESTS = new APIs()
 
 export default APIs
+export {APIREQUESTS}
